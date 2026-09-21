@@ -1,8 +1,8 @@
-<html lang="it"> 
+<html lang="it">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Il Mio Sito Web</title>
+    <title>Sito di Prova - Tracciamento GA4</title>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5FMSDRM4NQ"></script>
@@ -13,11 +13,59 @@
 
       gtag('config', 'G-5FMSDRM4NQ');
     </script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        .box {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
 
-    <h1>Il mio sito è online!</h1>
-    <p>Benvenuto sul mio sito web.</p>
+    <h1>Test Interazioni su GA4</h1>
+    <p>Benvenuta! Questa pagina contiene diversi elementi da fare cliccare per testare il tracciamento degli eventi su Google Analytics.</p>
+
+    <!-- Elemento 1: Pulsante con tracciamento evento personalizzato su GA4 -->
+    <div class="box">
+        <h3>1. Pulsante con Evento Personalizzato</h3>
+        <p>Cliccando questo pulsante, invierai un evento personalizzato chiamato <code>click_pulsante_test</code> a GA4.</p>
+        <button class="btn" onclick="gtag('event', 'click_pulsante_test', {'nome_bottone': 'Bottone Principale'}); alert('Evento inviato a GA4!');">
+            Cliccami per testare GA4
+        </button>
+    </div>
+
+    <!-- Elemento 2: Link Esterno (GA4 lo traccia in automatico) -->
+    <div class="box">
+        <h3>2. Link verso un sito esterno</h3>
+        <p>GA4 rileva automaticamente quando un utente clicca su un link che porta fuori dal tuo sito (click in uscita).</p>
+        <a href="https://www.google.com" target="_blank" class="btn" style="background-color: #28a745;">Vai su Google</a>
+    </div>
 
 </body>
 </html>
